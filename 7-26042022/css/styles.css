@@ -1,0 +1,59 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+h1 {
+  font-family: Georgia;
+  text-align: center;
+  font-size: 50pt;
+}
+#produto {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#produto div {
+  width: 18%;
+  margin: 6px;
+  border-radius: 20px;
+  border: 1px solid white;
+  box-shadow: 0px 0px 10px silver;
+}
+#produto div a {
+  margin-left: 20px;
+  text-align: left;
+  font-family: Georgia;
+  font-size: 15pt;
+  color: rgb(131, 194, 176);
+  text-decoration: none;
+}
+#produto div img {
+  width: 90%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-radius: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 15px;
+  box-shadow: 0px 0px 10px rgb(131, 194, 176);
+}
+.avaliacao {
+  margin: 10px;
+  margin-left: 20px;
+  text-align: left;
+  font-family: Georgia;
+  color: gray;
+}
+.preco {
+  margin: 10px;
+  color: rgb(131, 194, 176);
+  font-family: Georgia;
+  font-size: 15pt;
+  text-align: left;
+  margin-left: 10px;
+}
