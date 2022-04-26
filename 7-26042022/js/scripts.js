@@ -13,7 +13,7 @@ function CarregarProdutos() {
         saida += `
         <div>
         <img src=${item.image_link}>
-        <a href="${item.product_link}">${item.name}</a>
+        <a href="${item.product_link}"><center>${item.name}</center></a>
         <p class=avaliacao>${item.rating}</p>
         <p class=preco>R$ ${item.price}</p>
         </div>
