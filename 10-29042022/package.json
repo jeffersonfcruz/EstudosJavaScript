@@ -1,0 +1,20 @@
+{
+  "name": "projeto-cadastro-produtos",
+  "version": "1.0.0",
+  "description": "Atividade da criação de tabela de produtos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tabela",
+    "produtos",
+    "nodejs"
+  ],
+  "author": "Jefferson Cruz",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.3.1"
+  }
+}

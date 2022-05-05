@@ -43,7 +43,15 @@ const default_route = "/api/cliente";
 
 //rota par listar os clientes com endpoint listar
 app.get(`${default_route}/listar`, (req, res) => {
-  res.status(200).send({ output: `Rota GET` });
+  Cliente.find()
+    .then((dados) => {
+      res.status(200).send({ dados });
+    })
+    .catch((erro) =>
+      res
+        .status(500)
+        .send({ output: `Erro interno ao processar a consulta -> ${erro}` })
+    );
 });
 
 app.post(`${default_route}/cadastrar`, (req, res) => {
@@ -59,12 +67,31 @@ app.post(`${default_route}/cadastrar`, (req, res) => {
 //rota para atualizar os clientes com endpoint atualizar
 //passagem de argumentos pela url com o id do cliente
 app.put(`${default_route}/atualizar/:id`, (req, res) => {
-  res.status(200).send({ output: req.params.id });
+  Cliente.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (erro, dados) => {
+      if (erro) {
+        return res
+          .status(500)
+          .send({ output: `Erro ao tentar atualizar -> ${erro}` });
+      }
+      res.status(200).send({ output: "Dados atualizados" });
+    }
+  );
 });
 
 //rota para apagar cliente com endpoint deletar
 app.delete(`${default_route}/apagar/:id`, (req, res) => {
-  res.status(204).send({ output: req.params.id });
+  Cliente.findByIdAndDelete(req.params.id, (erro, dados) => {
+    if (erro) {
+      return res
+        .status(500)
+        .send({ output: `Erro ao tentar apagar -> ${erro}` });
+    }
+    res.status(204).send({ output: "apagado" });
+  });
 });
 
 //definir a porta de comunicação do servidor
